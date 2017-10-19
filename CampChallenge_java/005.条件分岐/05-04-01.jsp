@@ -8,17 +8,17 @@
 <%
     
     int type;
-    type = 10;
+    type = 7;
     
     switch(type){
-        case 10:
-            out.print(" サッカー");
+        case 1:
+            out.print("one");
             break;
-        case 20:
-            out.print("野球");
+        case 2:
+            out.print("two");
             break;
-        case 30:
-            out.print("ラグビー");
+        default:
+            out.print("想定外");
             break;            
     }          
 %>
