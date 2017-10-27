@@ -25,8 +25,8 @@ public class Modori_01 extends HttpServlet {
         }
     }
 
-    boolean Hantei(boolean hantei) {
-        if (hantei == true) {
+    boolean Hantei(int hantei) {
+        if (hantei==0) {
             return true;
         } else {
             return false;
@@ -48,11 +48,11 @@ public class Modori_01 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            if(Hantei(true)){
+            if(Hantei(0)){
+                out.print(Hantei(0)+">>この処理は正しく実行できました<br><br>");
                 myprofile(out);
-                out.print("<br>この処理は正しく実行できました");
             }else{
-                out.print("正しく実行できませんでした");
+                out.print(Hantei(0)+">>正しく実行できませんでした");
             
             
             
