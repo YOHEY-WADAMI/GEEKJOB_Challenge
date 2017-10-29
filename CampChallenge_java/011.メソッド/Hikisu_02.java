@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author guest1Day
  */
+
+//1. ３つの引数を持ち、渡された数値で掛け算をするメソッドを作成します。
+//メソッドは、１つ目の引数と２つ目の引数を掛け算し、３つ目の引数がtrueの場合は結果を２乗させてください。
+//また、２つ目の引数は5、３つ目の引数はfalseをデフォルト値として設定してください。
+//2. 作成したメソッドを呼び出し、結果を表示してください。
 public class Hikisu_02 extends HttpServlet {
     
     void kakezan(int num1 , int num2, boolean hantei, PrintWriter pw){
@@ -23,11 +28,21 @@ public class Hikisu_02 extends HttpServlet {
         pw.print("の掛け算：" +sum +"<br>");
         
         if( hantei == false){
-            pw.print(sum +"の乗算：" +(sum*sum) );
+            pw.print(sum +"の乗算：" +(sum*sum)+"<br><br>" );
         }
         
     }
-
+    void kakezan(int num1,PrintWriter pw){
+        kakezan(num1,5,false,pw);
+    }
+            
+    void kakezan(int num1,int num2,PrintWriter pw){
+        kakezan(num1,num2,false,pw);
+    }
+    
+    void kakezan(int num1, boolean hantei, PrintWriter pw){
+        kakezan(num1,2,hantei,pw);
+    }
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -42,7 +57,9 @@ public class Hikisu_02 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            kakezan(2,5,false,out);
+            kakezan(2,out);
+            kakezan(3,8,out);
+            kakezan(7,true,out);
         }
     }
 
